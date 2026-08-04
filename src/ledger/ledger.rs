@@ -20,7 +20,7 @@ impl Historial {
 }
 
 impl Ledger {
-    pub fn agregar_cuenta(&mut self, cuenta: Cuenta){
+    fn agregar_cuenta(&mut self, cuenta: Cuenta){
         self.cuentas.push(cuenta);
     }
 
