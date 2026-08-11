@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.5] - 2026-08-11
+
+### Added
+- Added `cli/` directory with the sole responsibility of serving as a basic command center for now.
+- Added `cli/colors.rs` with the sole responsibility of providing terminal text color
+
+### Refactors
+- The `main.rs` file was modularized by separating functions into files with single responsibilities.
+
+### Removed
+- Removed `c_terminal.rs` and moved `clean_terminal()` function to `cli_utils.rs`
+
 ## [0.0.4] - 2026-08-04
 
 ### Added
