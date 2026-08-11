@@ -1,4 +1,4 @@
-mod cuenta;
+mod account;
 mod ledger;
 mod utils;
 mod cli;

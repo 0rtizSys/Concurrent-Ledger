@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.6] - 2026-08-11
+
+### Refactors
+- Migrated entire codebase from Spanish to English (code, comments, user-facing messages, and module names)
+
 ## [0.0.5] - 2026-08-11
 
 ### Added

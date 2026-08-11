@@ -1,48 +1,48 @@
-use crate::cuenta::Cuenta;
+use crate::account::Account;
 
 pub struct Ledger {
-    pub cuentas: Vec<Cuenta>,
-    historial: Historial,
+    pub accounts: Vec<Account>,
+    history: History,
 }
 
-struct Historial {
-    siguiente_id: u64,
-    total_cuentas: u64,
+struct History {
+    next_id: u64,
+    t_accounts: u64,
 }
 
-impl Historial {
+impl History {
     fn new() -> Self {
         Self {
-            siguiente_id: 1,
-            total_cuentas: 0,
+            next_id: 1,
+            t_accounts: 0,
         }
     }
 }
 
 impl Ledger {
-    fn agregar_cuenta(&mut self, cuenta: Cuenta){
-        self.cuentas.push(cuenta);
+    fn add_account(&mut self, acc: Account){
+        self.accounts.push(acc);
     }
 
-    pub fn crear_cuenta(&mut self, nombre: &str) {
-        let id = self.historial.siguiente_id;
+    pub fn create_account(&mut self, name: &str) {
+        let id = self.history.next_id;
 
-        let cuenta: Cuenta = Cuenta {
+        let acc: Account = Account {
             id: id,
-            nombre: String::from(nombre),
-            saldo: 0,
+            name: String::from(name),
+            balance: 0,
         };
 
-        self.historial.siguiente_id += 1;
-        self.historial.total_cuentas += 1;
+        self.history.next_id += 1;
+        self.history.t_accounts += 1;
 
-        self.agregar_cuenta(cuenta);
+        self.add_account(acc);
     }
 
     pub fn new() -> Self {
         Self {
-            cuentas: Vec::new(),
-            historial: Historial::new(),
+            accounts: Vec::new(),
+            history: History::new(),
         }
     }
 }

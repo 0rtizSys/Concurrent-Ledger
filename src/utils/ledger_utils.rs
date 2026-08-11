@@ -2,39 +2,38 @@ use crate::cli::colors::*;
 use crate::Ledger;
 use crate::utils::input;
 
-pub fn crear_cuenta(ledger: &mut Ledger) {
-    println!("{BOLD}{CYAN}Nueva cuenta{RESET}\n");
+pub fn create_account(ledger: &mut Ledger) {
+    println!("{BOLD}{CYAN}New Account{RESET}\n");
 
-    let nombre = input("Nombre: ");
+    let name = input("Name: ");
 
-    if nombre.is_empty() {
-        println!("\n{RED}No se creo la cuenta: el nombre no puede estar vacio.{RESET}");
+    if name.is_empty() {
+        println!("\n{RED}Account not created: name cannot be empty.{RESET}");
         return;
     }
 
-    ledger.crear_cuenta(&nombre);
+    ledger.create_account(&name);
     println!(
-        "\n{GREEN}Cuenta \"{}\" creada correctamente.{RESET}",
-        nombre
+        "\n{GREEN}Account \"{}\" created successfully.{RESET}",
+        name
     );
 }
 
-pub fn mostrar_cuentas(ledger: &Ledger) {
-    println!("{BOLD}{CYAN}Cuentas{RESET}\n");
+pub fn show_accounts(ledger: &Ledger) {
+    println!("{BOLD}{CYAN}Accounts{RESET}\n");
 
-    if ledger.cuentas.is_empty() {
-        println!("{DIM}Todavia no hay cuentas registradas.{RESET}");
-        println!("{DIM}Crea una cuenta desde la opcion 2 para empezar.{RESET}");
+    if ledger.accounts.is_empty() {
+        println!("{DIM}💡 No accounts yet. Create one to get started!{RESET}");
         return;
     }
 
-    println!("{BOLD}{:<6} {:<24} {:>12}{RESET}", "ID", "Nombre", "Saldo");
+    println!("{BOLD}{:<6} {:<24} {:>12}{RESET}", "ID", "Name", "Balance");
     println!("{DIM}{:-<6} {:-<24} {:->12}{RESET}", "", "", "");
 
-    for cuenta in &ledger.cuentas {
+    for acc in &ledger.accounts {
         println!(
             "{:<6} {:<24} {:>12}",
-            cuenta.id, cuenta.nombre, cuenta.saldo
+            acc.id, acc.name, acc.balance
         );
     }
 }

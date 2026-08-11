@@ -4,18 +4,18 @@ use std::io::{self, Write};
 
 pub fn pause() {
     input(&format!(
-        "\n{}Presiona ENTER para continuar...{}",
+        "\n{}Press ENTER to continue...{}",
         DIM, RESET
     ));
 }
 
 pub fn menu() {
     println!("{BOLD}{CYAN}Aurum API{RESET}");
-    println!("{DIM}Gestion de cuentas del ledger{RESET}\n");
+    println!("{DIM}Ledger account management{RESET}\n");
 
-    println!("  {BOLD}1{RESET}  Ver cuentas");
-    println!("  {BOLD}2{RESET}  Crear cuenta");
-    println!("  {BOLD}0{RESET}  Salir");
+    println!("  {BOLD}1{RESET}  View accounts");
+    println!("  {BOLD}2{RESET}  Create account");
+    println!("  {BOLD}0{RESET}  Exit");
 
     println!();
 }

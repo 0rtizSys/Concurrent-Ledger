@@ -1,6 +1,6 @@
 pub mod ledger_utils;
-pub use ledger_utils::crear_cuenta;
-pub use ledger_utils::mostrar_cuentas;
+pub use ledger_utils::create_account;
+pub use ledger_utils::show_accounts;
 
 pub mod cli_utils;
 pub use cli_utils::input;

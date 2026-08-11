@@ -1,7 +1,7 @@
 use crate::Ledger;
 
 use super::colors::{GREEN, RESET, BOLD, YELLOW};
-use crate::utils::crear_cuenta;
+use crate::utils::create_account;
 
 use crate::utils::*;
 
@@ -9,25 +9,25 @@ pub fn start_cli(ledger: &mut Ledger) {
     loop {
         menu();
 
-        let comando: String = input(&format!("{BOLD}> {RESET}"));
-        match comando.as_str() {
+        let command: String = input(&format!("{BOLD}> {RESET}"));
+        match command.as_str() {
             "1" => {
                 clean_terminal();
-                mostrar_cuentas(&ledger);
+                show_accounts(&ledger);
                 pause();
                 clean_terminal();
             }
 
             "2" => {
                 clean_terminal();
-                crear_cuenta(ledger);
+                create_account(ledger);
                 pause();
                 clean_terminal();
             }
 
-            "0" | "salir" | "Salir" | "SALIR" => {
+            "0" | "exit" | "Exit" | "EXIT" => {
                 clean_terminal();
-                println!("{GREEN}Hasta luego.{RESET}");
+                println!("{GREEN}Goodbye.{RESET}");
                 break;
             }
 
@@ -37,7 +37,7 @@ pub fn start_cli(ledger: &mut Ledger) {
 
             _ => {
                 clean_terminal();
-                println!("{YELLOW}Opcion invalida: \"{}\".{RESET}\n", comando);
+                println!("{YELLOW}Invalid option: \"{}\".{RESET}\n", command);
             }
         }
     }
