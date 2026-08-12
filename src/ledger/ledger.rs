@@ -38,6 +38,10 @@ impl Ledger {
 
         self.add_account(acc);
     }
+    
+    pub fn mut_find_account(&mut self, target: u64) -> Option<&mut Account> {
+        self.accounts.iter_mut().find(|account| account.id == target)
+    }
 
     pub fn new() -> Self {
         Self {

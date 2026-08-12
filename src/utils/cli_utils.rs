@@ -15,6 +15,7 @@ pub fn menu() {
 
     println!("  {BOLD}1{RESET}  View accounts");
     println!("  {BOLD}2{RESET}  Create account");
+    println!("  {BOLD}3{RESET}  Deposit to an account");
     println!("  {BOLD}0{RESET}  Exit");
 
     println!();

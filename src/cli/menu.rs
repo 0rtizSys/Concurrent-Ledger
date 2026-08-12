@@ -1,4 +1,5 @@
 use crate::Ledger;
+use crate::utils::ledger_utils::ledger_deposit_account;
 
 use super::colors::{GREEN, RESET, BOLD, YELLOW};
 use crate::utils::create_account;
@@ -21,6 +22,13 @@ pub fn start_cli(ledger: &mut Ledger) {
             "2" => {
                 clean_terminal();
                 create_account(ledger);
+                pause();
+                clean_terminal();
+            }
+
+            "3" => {
+                clean_terminal();
+                ledger_deposit_account(ledger);
                 pause();
                 clean_terminal();
             }

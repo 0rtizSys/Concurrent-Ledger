@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.7] - 2026-08-12
+
+### Added
+- Added account deposit flow from the CLI.
+- Added account service layer with `deposit_account()`.
+- Added account error handling through `AccountError` and `AccountResult`.
+- Added `thiserror` dependency for typed account errors.
+- Added mutable account lookup in `Ledger`.
+
+### Changed
+- Updated the CLI menu with a deposit option.
+
 ## [0.0.6] - 2026-08-11
 
 ### Refactors
